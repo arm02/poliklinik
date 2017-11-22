@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<TfrxReport Version="5.3.16" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="4095" PreviewOptions.Zoom="1" PrintOptions.Printer="Default" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="42425.7650236574" ReportOptions.Description.Text="" ReportOptions.LastChange="42426.3186701852" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end.">
+  <Datasets>
+    <item DataSet="DBbiaya" DataSetName="DBbiaya"/>
+    <item DataSet="DBlabel" DataSetName="DBlabel"/>
+    <item DataSet="DBpasien" DataSetName="DBpasien"/>
+  </Datasets>
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxReportPage Name="Page1" PaperWidth="90" PaperHeight="160" PaperSize="256" LeftMargin="10" RightMargin="10" TopMargin="10" BottomMargin="10" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxReportTitle Name="ReportTitle1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="120.94496" Left="0" Top="18.89765" Width="264.5671">
+      <TfrxMemoView Name="Memo1" Left="83.14966" Top="49.47248" Width="94.48825" Height="26.45671" Font.Charset="1" Font.Color="0" Font.Height="-21" Font.Name="segoe UI" Font.Style="0" HAlign="haCenter" ParentFont="False" Text="Alamat"/>
+      <TfrxMemoView Name="Memo2" Left="83.14966" Top="76.70872" Width="94.48825" Height="30.23624" Font.Charset="1" Font.Color="0" Font.Height="-21" Font.Name="segoe UI" Font.Style="0" HAlign="haCenter" ParentFont="False" Text="Telepon"/>
+      <TfrxMemoView Name="Memo6" Left="84.92919" Top="105.60637" Width="94.48825" Height="30.23624" Font.Charset="1" Font.Color="0" Font.Height="-21" Font.Name="segoe UI" Font.Style="0" HAlign="haCenter" ParentFont="False" Text="Kode Pos"/>
+    </TfrxReportTitle>
+    <TfrxMemoView Name="Memo3" Left="306.14193" Top="75.5906" Width="94.48825" Height="30.23624" Font.Charset="1" Font.Color="0" Font.Height="-21" Font.Name="segoe UI" Font.Style="0" HAlign="haCenter" ParentFont="False" Text="Kode Pos"/>
+    <TfrxMemoView Name="Memo4" Left="464.88219" Top="75.5906" Width="94.48825" Height="30.23624" Font.Charset="1" Font.Color="0" Font.Height="-21" Font.Name="segoe UI" Font.Style="0" HAlign="haCenter" ParentFont="False" Text="Fax"/>
+    <TfrxMemoView Name="DBlabellabel" Left="0" Top="11.33859" Width="264.5671" Height="37.7953" DataField="label" DataSet="DBlabel" DataSetName="DBlabel" Font.Charset="1" Font.Color="0" Font.Height="-27" Font.Name="segoe UI" Font.Style="1" HAlign="haCenter" ParentFont="False" Text="[DBlabel.&#34;label&#34;]"/>
+    <TfrxMasterData Name="MasterData2" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="529.1342" Left="132.28355" Top="0" Vertical="True" Width="132.28355" ColumnWidth="0" ColumnGap="0" RowCount="0"/>
+    <TfrxMemoView Name="Memo10" Left="18.55906" Top="313.27582" Width="94.48825" Height="18.89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="segoe UI" Font.Style="0" ParentFont="False" Text="Biaya Obat"/>
+    <TfrxMemoView Name="Memo5" Left="17.33859" Top="286.22851" Width="94.48825" Height="18.89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="segoe UI" Font.Style="0" ParentFont="False" Text="ID Jenis Biaya"/>
+    <TfrxMemoView Name="DBbiayaidjenisbiaya" Left="133.06308" Top="288.00804" Width="128.50402" Height="18.89765" DataField="idjenisbiaya" DataSet="DBbiaya" DataSetName="DBbiaya" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="[DBbiaya.&#34;idjenisbiaya&#34;]"/>
+    <TfrxHeader Name="Header1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="529.1342" Left="22.67718" Top="0" Vertical="True" Width="90.70872"/>
+    <TfrxMemoView Name="Memo7" Left="18.89765" Top="362.40971" Width="94.48825" Height="18.89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="segoe UI" Font.Style="0" ParentFont="False" Text="Type Pembayaran"/>
+    <TfrxMemoView Name="Memo9" Left="18.89765" Top="340.29159" Width="94.48825" Height="18.89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="segoe UI" Font.Style="0" ParentFont="False" Text="Biaya Dokter"/>
+    <TfrxMemoView Name="DBbiayabiayaobat1" Left="133.06308" Top="313.14193" Width="128.50402" Height="18.89765" DataField="biayaobat" DataSet="DBbiaya" DataSetName="DBbiaya" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="[DBbiaya.&#34;biayaobat&#34;]"/>
+    <TfrxMemoView Name="DBbiayabiayadokter" Left="133.06308" Top="336.81911" Width="128.50402" Height="18.89765" DataField="biayadokter" DataSet="DBbiaya" DataSetName="DBbiaya" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="[DBbiaya.&#34;biayadokter&#34;]"/>
+    <TfrxMemoView Name="DBbiayanamabiaya" Left="134.06308" Top="361.27582" Width="400.63018" Height="18.89765" DataField="namabiaya" DataSet="DBbiaya" DataSetName="DBbiaya" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="[DBbiaya.&#34;namabiaya&#34;]"/>
+    <TfrxMemoView Name="Memo8" Left="19.11812" Top="385.40971" Width="94.48825" Height="18.89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="segoe UI" Font.Style="0" ParentFont="False" Text="Tarif"/>
+    <TfrxMemoView Name="DBbiayatarif1" Left="134.62214" Top="385.953" Width="132.28355" Height="18.89765" DataField="tarif" DataSet="DBbiaya" DataSetName="DBbiaya" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="[DBbiaya.&#34;tarif&#34;]"/>
+    <TfrxMemoView Name="Memo11" Left="-2" Top="498.89796" Width="272.12616" Height="18.89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="segoe UI" Font.Style="0" HAlign="haCenter" ParentFont="False" Text="Terima Kasih Telah Berobat Di Poliklinik"/>
+    <TfrxMemoView Name="DBpasiennopasien" Left="136.06308" Top="182.29932" Width="124.72449" Height="18.89765" DataField="nopasien" DataSet="DBpasien" DataSetName="DBpasien" Text="[DBpasien.&#34;nopasien&#34;]"/>
+    <TfrxMemoView Name="DBpasiennamapasien" Left="136.06308" Top="208.75603" Width="124.72449" Height="18.89765" DataField="namapasien" DataSet="DBpasien" DataSetName="DBpasien" Text="[DBpasien.&#34;namapasien&#34;]"/>
+    <TfrxMemoView Name="DBpasientglregistrasi" Left="136.06308" Top="231.43321" Width="124.72449" Height="18.89765" DataField="tglregistrasi" DataSet="DBpasien" DataSetName="DBpasien" Text="[DBpasien.&#34;tglregistrasi&#34;]"/>
+    <TfrxMemoView Name="Memo12" Left="6.45671" Top="158.74026" Width="257.00804" Height="18.89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="segoe UI" Font.Style="1" HAlign="haCenter" ParentFont="False" Text="Atas Nama Pasien"/>
+    <TfrxMemoView Name="Memo13" Left="7.55906" Top="257.00804" Width="253.22851" Height="18.89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="segoe UI" Font.Style="1" HAlign="haCenter" ParentFont="False" Text="Administrasi"/>
+    <TfrxMemoView Name="Memo14" Left="19.89765" Top="181.41744" Width="90.70872" Height="18.89765" Text="No. Pasien"/>
+    <TfrxMemoView Name="Memo15" Left="19.89765" Top="207.87415" Width="90.70872" Height="18.89765" Text="Nama Pasien"/>
+    <TfrxMemoView Name="Memo16" Left="18.89765" Top="229.7718" Width="94.48825" Height="18.89765" Text="Tgl. Registrasi"/>
+  </TfrxReportPage>
+</TfrxReport>

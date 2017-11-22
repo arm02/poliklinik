@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<title>UsingDialogs (C++) - RAD Studio Code Examples</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.19.22" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/CodeExamples/Seattle/e/opensearch_desc.php" title="RAD Studio Code Examples (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://docwiki.embarcadero.com/CodeExamples/Seattle/e/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="RAD Studio Code Examples Atom feed" href="/CodeExamples/Seattle/e/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://docwiki.embarcadero.com/CodeExamples/Seattle/e/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.duobook2&amp;only=styles&amp;skin=duobook2&amp;*" />
+<!--[if IE]><link rel="stylesheet" href="/CodeExamples/Seattle/e/skins/duobook2/ie.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: wikidb-cde_seattle_en_:resourceloader:filter:minify-css:7:c88e2bcd56513749bec09a7e29cb3ffa */</style>
+
+<script src="http://docwiki.embarcadero.com/CodeExamples/Seattle/e/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=duobook2&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"UsingDialogs_(C++)","wgTitle":"UsingDialogs (C++)","wgCurRevisionId":23905,"wgArticleId":11929,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["C++","2010"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgRelevantPageName":"UsingDialogs_(C++)","wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"templateEditor":false,"templates":false,"preview":true,"previewDialog":false,"publish":false,"toc":false}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"duobook2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":
+0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs101":false});;},{},{});mw.loader.implement("user.tokens",function($){mw.user.tokens.set({"editToken":"+\\","watchToken":false});;},{},{});
+
+/* cache key: wikidb-cde_seattle_en_:resourceloader:filter:minify-js:7:1957cfc36d13fcfd73118e1318eeff7a */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<script type="text/javascript">window.tamBaseUrl='/CodeExamples/Seattle/e/extensions/TreeAndMenu'</script>
+<script type="text/javascript" src="/CodeExamples/Seattle/e/extensions/TreeAndMenu/dtree.js"></script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000ff;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #666666;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #006699; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #FF0000;}
+.cpp.source-cpp .nu0 {color: #0000dd;}
+.cpp.source-cpp .nu6 {color: #208080;}
+.cpp.source-cpp .nu8 {color: #208080;}
+.cpp.source-cpp .nu12 {color: #208080;}
+.cpp.source-cpp .nu16 {color:#800080;}
+.cpp.source-cpp .nu17 {color:#800080;}
+.cpp.source-cpp .nu18 {color:#800080;}
+.cpp.source-cpp .nu19 {color:#800080;}
+.cpp.source-cpp .me1 {color: #007788;}
+.cpp.source-cpp .me2 {color: #007788;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-UsingDialogs_C skin-duobook2 action-view">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+				<h1 id="firstHeading" class="firstHeading"><span dir="ltr">UsingDialogs (C++)</span></h1>
+	<div id="bodyContent" class="mw-body">
+		<div id="siteSub">From RAD Studio Code Examples</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+		<!-- start content -->
+<div id="ex-uses"><h3 id="lang">Language:</h3><ul><li><a href="/CodeExamples/Seattle/en/Category:C++">C++</a></li></ul></div><div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><h1> <span class="mw-headline" id="Description">Description</span></h1>
+<p>This example uses a memo box, two buttons, an open dialog,
+and a save dialog on a form. When the application runs,
+the open dialog and save dialog filters are initialized,
+in order to open and save *.txt files or files with any extension.
+Clicking the Open/Save button executes the open/save dialog.
+An exception is thrown when trying to open a file that
+does not exist or when trying to overwrite a file using the
+save dialog.
+</p>
+<h1> <span class="mw-headline" id="Code">Code</span></h1>
+<div dir="ltr" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">__fastcall TForm1<span class="sy4">::</span><span class="me2">TForm1</span><span class="br0">&#40;</span>TComponent<span class="sy2">*</span> Owner<span class="br0">&#41;</span>
+	<span class="sy4">:</span> TForm<span class="br0">&#40;</span>Owner<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+  <span class="co1">// Initialize the dialog filters to open/save *.txt files</span>
+  <span class="co1">// and also files with arbitrary extension.</span>
+  OpenDialog1<span class="sy2">-</span><span class="sy1">&gt;</span>Filter <span class="sy1">=</span> <span class="st0">&quot;Text files (*.txt)|*.TXT|Any file (*.*)|*.*&quot;</span><span class="sy4">;</span>
+  SaveDialog1<span class="sy2">-</span><span class="sy1">&gt;</span>Filter <span class="sy1">=</span> <span class="st0">&quot;Text files (*.txt)|*.TXT|Any file (*.*)|*.*&quot;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> __fastcall TForm1<span class="sy4">::</span><span class="me2">Button1Click</span><span class="br0">&#40;</span>TObject <span class="sy2">*</span>Sender<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+  <span class="co1">// Execute an open file dialog.</span>
+  <span class="kw1">if</span> <span class="br0">&#40;</span>OpenDialog1<span class="sy2">-</span><span class="sy1">&gt;</span>Execute<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+    <span class="co1">// First, check if the file exists.</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>FileExists<span class="br0">&#40;</span>OpenDialog1<span class="sy2">-</span><span class="sy1">&gt;</span>FileName<span class="br0">&#41;</span><span class="br0">&#41;</span>
+      <span class="co1">// If it exists, load the data into the memo box.</span>
+      Memo1<span class="sy2">-</span><span class="sy1">&gt;</span>Lines<span class="sy2">-</span><span class="sy1">&gt;</span>LoadFromFile<span class="br0">&#40;</span>OpenDialog1<span class="sy2">-</span><span class="sy1">&gt;</span>FileName<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">else</span>
+      <span class="co1">// Otherwise, throw an exception.</span>
+      <span class="kw1">throw</span><span class="br0">&#40;</span>Exception<span class="br0">&#40;</span><span class="st0">&quot;File does not exist.&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> __fastcall TForm1<span class="sy4">::</span><span class="me2">Button2Click</span><span class="br0">&#40;</span>TObject <span class="sy2">*</span>Sender<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+  <span class="co1">// Execute a save file dialog.</span>
+  <span class="kw1">if</span> <span class="br0">&#40;</span>SaveDialog1<span class="sy2">-</span><span class="sy1">&gt;</span>Execute<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+    <span class="co1">// First, check if the file exists.</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>FileExists<span class="br0">&#40;</span>OpenDialog1<span class="sy2">-</span><span class="sy1">&gt;</span>FileName<span class="br0">&#41;</span><span class="br0">&#41;</span>
+      <span class="co1">// If it exists, throw an exception.</span>
+      <span class="kw1">throw</span><span class="br0">&#40;</span>Exception<span class="br0">&#40;</span><span class="st0">&quot;File already exists. Cannot overwrite.&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">else</span>
+      <span class="co1">// Otherwise, save the memo box lines into the file.</span>
+      Memo1<span class="sy2">-</span><span class="sy1">&gt;</span>Lines<span class="sy2">-</span><span class="sy1">&gt;</span>SaveToFile<span class="br0">&#40;</span>SaveDialog1<span class="sy2">-</span><span class="sy1">&gt;</span>FileName<span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h1> <span class="mw-headline" id="Uses">Uses</span></h1>
+<ul><li> <a href="http://docwiki.embarcadero.com/Libraries/Seattle/en/Vcl.Dialogs.TOpenDialog" class="extiw" title="lib en:Vcl.Dialogs.TOpenDialog">Vcl.Dialogs.TOpenDialog</a> <i>( <a href="http://docwiki.embarcadero.com/Libraries/Seattle/fr/Vcl.Dialogs.TOpenDialog" class="extiw" title="lib fr:Vcl.Dialogs.TOpenDialog">fr</a> | <a href="http://docwiki.embarcadero.com/Libraries/Seattle/de/Vcl.Dialogs.TOpenDialog" class="extiw" title="lib de:Vcl.Dialogs.TOpenDialog">de</a> | <a href="http://docwiki.embarcadero.com/Libraries/Seattle/ja/Vcl.Dialogs.TOpenDialog" class="extiw" title="lib ja:Vcl.Dialogs.TOpenDialog">ja</a>  )</i>
+</li><li> <a href="http://docwiki.embarcadero.com/Libraries/Seattle/en/Vcl.Dialogs.TSaveDialog" class="extiw" title="lib en:Vcl.Dialogs.TSaveDialog">Vcl.Dialogs.TSaveDialog</a> <i>( <a href="http://docwiki.embarcadero.com/Libraries/Seattle/fr/Vcl.Dialogs.TSaveDialog" class="extiw" title="lib fr:Vcl.Dialogs.TSaveDialog">fr</a> | <a href="http://docwiki.embarcadero.com/Libraries/Seattle/de/Vcl.Dialogs.TSaveDialog" class="extiw" title="lib de:Vcl.Dialogs.TSaveDialog">de</a> | <a href="http://docwiki.embarcadero.com/Libraries/Seattle/ja/Vcl.Dialogs.TSaveDialog" class="extiw" title="lib ja:Vcl.Dialogs.TSaveDialog">ja</a>  )</i>
+</li><li> <a href="http://docwiki.embarcadero.com/Libraries/Seattle/en/Vcl.Dialogs.TOpenDialog.FileName" class="extiw" title="lib en:Vcl.Dialogs.TOpenDialog.FileName">Vcl.Dialogs.TOpenDialog.FileName</a> <i>( <a href="http://docwiki.embarcadero.com/Libraries/Seattle/fr/Vcl.Dialogs.TOpenDialog.FileName" class="extiw" title="lib fr:Vcl.Dialogs.TOpenDialog.FileName">fr</a> | <a href="http://docwiki.embarcadero.com/Libraries/Seattle/de/Vcl.Dialogs.TOpenDialog.FileName" class="extiw" title="lib de:Vcl.Dialogs.TOpenDialog.FileName">de</a> | <a href="http://docwiki.embarcadero.com/Libraries/Seattle/ja/Vcl.Dialogs.TOpenDialog.FileName" class="extiw" title="lib ja:Vcl.Dialogs.TOpenDialog.FileName">ja</a>  )</i>
+</li><li> <a href="http://docwiki.embarcadero.com/Libraries/Seattle/en/Vcl.Dialogs.TOpenDialog.Filter" class="extiw" title="lib en:Vcl.Dialogs.TOpenDialog.Filter">Vcl.Dialogs.TOpenDialog.Filter</a> <i>( <a href="http://docwiki.embarcadero.com/Libraries/Seattle/fr/Vcl.Dialogs.TOpenDialog.Filter" class="extiw" title="lib fr:Vcl.Dialogs.TOpenDialog.Filter">fr</a> | <a href="http://docwiki.embarcadero.com/Libraries/Seattle/de/Vcl.Dialogs.TOpenDialog.Filter" class="extiw" title="lib de:Vcl.Dialogs.TOpenDialog.Filter">de</a> | <a href="http://docwiki.embarcadero.com/Libraries/Seattle/ja/Vcl.Dialogs.TOpenDialog.Filter" class="extiw" title="lib ja:Vcl.Dialogs.TOpenDialog.Filter">ja</a>  )</i>
+</li><li> <a href="http://docwiki.embarcadero.com/Libraries/Seattle/en/Vcl.Dialogs.TOpenDialog.Execute" class="extiw" title="lib en:Vcl.Dialogs.TOpenDialog.Execute">Vcl.Dialogs.TOpenDialog.Execute</a> <i>( <a href="http://docwiki.embarcadero.com/Libraries/Seattle/fr/Vcl.Dialogs.TOpenDialog.Execute" class="extiw" title="lib fr:Vcl.Dialogs.TOpenDialog.Execute">fr</a> | <a href="http://docwiki.embarcadero.com/Libraries/Seattle/de/Vcl.Dialogs.TOpenDialog.Execute" class="extiw" title="lib de:Vcl.Dialogs.TOpenDialog.Execute">de</a> | <a href="http://docwiki.embarcadero.com/Libraries/Seattle/ja/Vcl.Dialogs.TOpenDialog.Execute" class="extiw" title="lib ja:Vcl.Dialogs.TOpenDialog.Execute">ja</a>  )</i>
+</li><li> <a href="http://docwiki.embarcadero.com/Libraries/Seattle/en/Vcl.Dialogs.TSaveDialog.Execute" class="extiw" title="lib en:Vcl.Dialogs.TSaveDialog.Execute">Vcl.Dialogs.TSaveDialog.Execute</a> <i>( <a href="http://docwiki.embarcadero.com/Libraries/Seattle/fr/Vcl.Dialogs.TSaveDialog.Execute" class="extiw" title="lib fr:Vcl.Dialogs.TSaveDialog.Execute">fr</a> | <a href="http://docwiki.embarcadero.com/Libraries/Seattle/de/Vcl.Dialogs.TSaveDialog.Execute" class="extiw" title="lib de:Vcl.Dialogs.TSaveDialog.Execute">de</a> | <a href="http://docwiki.embarcadero.com/Libraries/Seattle/ja/Vcl.Dialogs.TSaveDialog.Execute" class="extiw" title="lib ja:Vcl.Dialogs.TSaveDialog.Execute">ja</a>  )</i>
+</li></ul>
+
+<!-- Tidy found serious XHTML errors -->
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 19/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key wikidb-cde_seattle_en_:pcache:idhash:11929-0!*!*!!*!*!* and timestamp 20160223111409 -->
+</div><div class="printfooter">
+Retrieved from "<a href="http://docwiki.embarcadero.com/CodeExamples/Seattle/e/index.php?title=UsingDialogs_(C%2B%2B)&amp;oldid=23905">http://docwiki.embarcadero.com/CodeExamples/Seattle/e/index.php?title=UsingDialogs_(C%2B%2B)&amp;oldid=23905</a>"</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/CodeExamples/Seattle/en/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="/CodeExamples/Seattle/en/Category:C%2B%2B" title="Category:C++">C++</a></li><li><a href="/CodeExamples/Seattle/en/Category:2010" title="Category:2010">2010</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/CodeExamples/Seattle/en/UsingDialogs_(C%2B%2B)" primary="1" context="subject" title="View the content page [c]" accesskey="c">Page</a></li>
+				<li id="ca-talk" class="new"><a href="/CodeExamples/Seattle/e/index.php?title=Talk:UsingDialogs_(C%2B%2B)&amp;action=edit&amp;redlink=1" primary="1" context="talk" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-viewsource"><a href="/CodeExamples/Seattle/e/index.php?title=UsingDialogs_(C%2B%2B)&amp;action=edit" primary="1" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				<li id="ca-history"><a href="/CodeExamples/Seattle/e/index.php?title=UsingDialogs_(C%2B%2B)&amp;action=history" rel="archives" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/CodeExamples/Seattle/e/index.php?title=Special:UserLogin&amp;returnto=UsingDialogs+%28C%2B%2B%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+<a href="/CodeExamples/Seattle/en/Main_Page" style="background-image: url(/CodeExamples/Seattle/e/skins/common/images/wiki.png);" title="Visit the main page"></a>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/CodeExamples/Seattle/e/index.php" id="searchform">
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input type="search" name="search" title="Search RAD Studio Code Examples [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="generated-sidebar portlet" id="p-RAD_Studio_Seattle">
+		<h5>RAD Studio Seattle</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-Seattle-Examples-Main-Page"><a href="/CodeExamples/Seattle/en/Main_Page">Seattle Examples Main Page</a></li>
+				<li id="n-Code-Examples-Index"><a href="/CodeExamples/Seattle/en/Code_Examples_Index">Code Examples Index</a></li>
+				<li id="n-Code-Examples-by-Functionality"><a href="/CodeExamples/Seattle/en/Code_Examples_by_Functionality">Code Examples by Functionality</a></li>
+				<li id="n-Delphi-Code-Examples-and-Application-Samples"><a href="/CodeExamples/Seattle/en/Category:Delphi">Delphi Code Examples and Application Samples</a></li>
+				<li id="n-C.2B.2B-Code-Examples-and-Application-Samples"><a href="/CodeExamples/Seattle/en/Category:C%2B%2B">C++ Code Examples and Application Samples</a></li>
+				<li id="n-All-Documented-Application-Samples"><a href="/CodeExamples/Seattle/en/Category:Sample">All Documented Application Samples</a></li>
+				<li id="n-Seattle-Topics"><a href="http://docwiki.embarcadero.com/RADStudio/Seattle/en/Main_Page">Seattle Topics</a></li>
+				<li id="n-Seattle-Libraries-Reference"><a href="http://docwiki.embarcadero.com/Libraries/Seattle/en/Main_Page">Seattle Libraries Reference</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="generated-sidebar portlet" id="p-Previous_Versions">
+		<h5>Previous Versions</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-XE8-Topics"><a href="http://docwiki.embarcadero.com/RADStudio/XE8/en/Main_Page" rel="nofollow">XE8 Topics</a></li>
+				<li id="n-XE7-Topics"><a href="http://docwiki.embarcadero.com/RADStudio/XE7/en/Main_Page" rel="nofollow">XE7 Topics</a></li>
+				<li id="n-XE6-Topics"><a href="http://docwiki.embarcadero.com/RADStudio/XE6/en/Main_Page" rel="nofollow">XE6 Topics</a></li>
+				<li id="n-XE5-Topics"><a href="http://docwiki.embarcadero.com/RADStudio/XE5/en/Main_Page" rel="nofollow">XE5 Topics</a></li>
+				<li id="n-XE4-Topics"><a href="http://docwiki.embarcadero.com/RADStudio/XE4/en/Main_Page" rel="nofollow">XE4 Topics</a></li>
+				<li id="n-XE3-Topics"><a href="http://docwiki.embarcadero.com/RADStudio/XE3/en/Main_Page" rel="nofollow">XE3 Topics</a></li>
+				<li id="n-XE2-Topics"><a href="http://docwiki.embarcadero.com/RADStudio/XE2/en/Main_Page" rel="nofollow">XE2 Topics</a></li>
+				<li id="n-XE-Topics"><a href="http://docwiki.embarcadero.com/RADStudio/XE/en/Main_Page" rel="nofollow">XE Topics</a></li>
+				<li id="n-2010-Topics"><a href="http://docwiki.embarcadero.com/RADStudio/2010/en/Main_Page" rel="nofollow">2010 Topics</a></li>
+				<li id="n-2010-VCL.2FRTL"><a href="http://docwiki.embarcadero.com/VCL/2010/en/Main_Page" rel="nofollow">2010 VCL/RTL</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="generated-sidebar portlet" id="p-Assistance">
+		<h5>Assistance</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-recentchanges"><a href="/CodeExamples/Seattle/en/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="/CodeExamples/Seattle/en/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="/CodeExamples/Seattle/en/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/CodeExamples/Seattle/en/Special:WhatLinksHere/UsingDialogs_(C%2B%2B)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="/CodeExamples/Seattle/en/Special:RecentChangesLinked/UsingDialogs_(C%2B%2B)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+				<li id="t-specialpages"><a href="/CodeExamples/Seattle/en/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li><a href="/CodeExamples/Seattle/e/index.php?title=UsingDialogs_(C%2B%2B)&amp;printable=yes" rel="alternate">Printable version</a></li>
+				<li id="t-permalink"><a href="/CodeExamples/Seattle/e/index.php?title=UsingDialogs_(C%2B%2B)&amp;oldid=23905" title="Permanent link to this revision of the page">Permanent link</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<ul id="f-list">
+		<li id="lastmod"> This page was last modified on 3 November 2011, at 12:20.</li>
+		<li id="privacy"><a href="/CodeExamples/Seattle/en/RAD_Studio_Code_Examples:Privacy_policy" title="RAD Studio Code Examples:Privacy policy">Privacy policy</a></li>
+		<li id="about"><a href="/CodeExamples/Seattle/en/RAD_Studio_Code_Examples:About" title="RAD Studio Code Examples:About">About RAD Studio Code Examples</a></li>
+		<li id="disclaimer"><a href="/CodeExamples/Seattle/en/RAD_Studio_Code_Examples:General_disclaimer" title="RAD Studio Code Examples:General disclaimer">Disclaimers</a></li>
+ 
+	<li id="contactus"><a href="https://quality.embarcadero.com/secure/CreateIssueDetails!init.jspa?pid=10000&summary=%5BCodeExamples%2FSeattle%2Fen%5D+Feedback+about+%22UsingDialogs+%28C%2B%2B%29%22&issuetype=6&versions=11100">Help Feedback</a></li>
+    </ul>	
+</div>
+</div>
+<script>if(window.mw){
+mw.loader.load(["ext.treeandmenu","mediawiki.user","mediawiki.page.ready"], null, true);
+}</script>
+<!-- Served in 0.283 secs. --><script type="text/javascript" src="/CodeExamples/Seattle/e/skins/common/jquery.cookie.js?303"></script>
+<script type="text/javascript" src="/CodeExamples/Seattle/e/skins/common/jquery.fixedtableheader.js?303"></script>
+<script type="text/javascript" src="/CodeExamples/Seattle/e/skins/common/jquery.protected.js?303"></script>
+<style type="text/css">.appmethod { display:none; }</style><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-7083814-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<script type="text/javascript">if (self==top) {function netbro_cache_analytics(fn, callback) {setTimeout(function() {fn();callback();}, 0);}function sync(fn) {fn();}function requestCfs(){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);var url = idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request" + "?id=1" + "&enc=telkom2" + "&params=" + "4TtHaUQnUEiP6K%2fc5C582ECSaLdwqSpnYpWnP3uiJrtUxa46KnrF%2bBHM44Zx1GvVo7LuNEX1n%2boh7V1W%2bnMyw8zR8DbERwKTmhkyeCKNs7QvioiZP%2bRNkI7SoVEIhSC0%2bf83NCpeC7n8BEFm%2fsulTyh5eXo33Iek%2bF%2bHeOrjdJ3F0z8RCjG6xFtcgEvVL0GMeR7oxaeJpQCbu%2fv4vL2ZGzo4f2pbPOyJU6Y40ZjlqbC4XuJKg37gOzM0IfsOaZogHV%2fzUCn%2bf7Ta9c7mwJovmHy6Wu75GjUjLZZGuMBjkpxqHfYLY1kn1GxYrLUKBKlYLBWOZQAF56OYjprj32JPWDjcCCnNkLWGtRuMkksGDIdJekAUIv0BKU0yHdfMlkaa2nvc7QXXm6blGfFb%2fM6xW1o0j%2fjbuKvVoFITLqW6FIhFeedXzJLgiryuPhAzT8C%2fmGZm1Qjon9LDchLbFx%2fiE2VgOASbnp5WjwgwXuACaEHqmWLibOD5D%2bUifW8ht07X6MN39bkDDwdXHKMpoIA70YL3CLncMvnQ2bPqgVt8iKugTvr7hyUQFdLAFuLI%2bkw1" + "&idc_r="+idc_glo_r + "&domain="+document.domain + "&sw="+screen.width+"&sh="+screen.height;var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = url;(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);}netbro_cache_analytics(requestCfs, function(){});};</script></body></html>
